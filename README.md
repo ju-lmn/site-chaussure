@@ -44,3 +44,31 @@ La base est composée de cinq tables :
 | `chaussure` | Contient les modèles, leurs prix, leurs couleurs et leurs relations avec les marques et les types. |
 | `taille` | Contient les différentes tailles disponibles. |
 | `chaussure_taille` | Permet d'associer les chaussures aux tailles et de gérer les stocks. |
+
+## 4. Installation et configuration de l'environnement
+
+Pour faire fonctionner le projet, il est nécessaire de configurer les informations de connexion à la base de données.
+
+### Fichier `.env`
+
+Le fichier `.env` permet de stocker les informations de configuration du projet, notamment les identifiants de connexion à la base de données :
+
+- Le nom de la base de données.
+- Le nom d'utilisateur MySQL.
+- Le mot de passe.
+- L'adresse du serveur de base de données.
+
+L'utilisation de ce fichier permet de ne pas écrire directement les identifiants dans le code PHP. Cela facilite également la modification de la configuration sans avoir à modifier plusieurs fichiers du projet.
+
+**Attention :** le fichier `.env` contient des informations sensibles. Il ne doit donc pas être publié sur GitHub. Il faut l'ajouter au fichier `.gitignore`.
+
+### Utilisation de la bibliothèque `vlucas/phpdotenv`
+
+La bibliothèque `vlucas/phpdotenv` permet de lire automatiquement les informations présentes dans le fichier `.env`.
+
+Elle rend ces informations accessibles au code PHP grâce à des variables d'environnement.
+
+Pour l'installer, il faut utiliser Composer avec la commande suivante :
+
+```bash
+composer require vlucas/phpdotenv
